@@ -187,6 +187,7 @@ p {
 
 
 .navbar {
+	backdrop-filter: blur(10px);
 	font-size: 14px;
   font-family: Open Sans;
 	font-weight: 400;
@@ -320,7 +321,7 @@ p {
 	border: 1px solid var(--border-color);
 	border-radius: 4px;
 	background-color: var(--bg-color);
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(5px);
 	transform: translateY(10px);
 	opacity: 0;
 	transition: transform 0.2s ease, opacity 0.2s ease;
@@ -329,7 +330,7 @@ p {
   .navbar-nav > li:hover > ul {
 	display: grid;
 	transform: translateY(0);
-	opacity: 1;
+	opacity: 10;
   }
 
 
@@ -660,7 +661,7 @@ font-family: Arial;
 
 
 .image-bg .hero-section {
-	background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/IT.jpg) no-repeat center center;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../images/pp.png) no-repeat center center;
 	background-size: cover;
 	padding: 150px 0 100px 0;
 }
@@ -1051,7 +1052,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 }
 
 .cs-main .left-section {
-	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../images/IT.jpg) no-repeat center center;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../images/pp.png) no-repeat center center;
 	background-size: cover;
 }
 
@@ -1367,7 +1368,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 }
 
 .feature-sub {
-	background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(../images/IT.jpg) no-repeat center center;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(../images/pp.png) no-repeat center center;
 	background-size: cover;
 	padding: 150px 0 150px 0;
 }
@@ -1793,7 +1794,7 @@ padding: 120px 10px 50px 350px;
 .cta-sub {
 	padding-top: 150px;
 	padding-bottom: 150px;
-	background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(../images/IT.jpg) no-repeat center center;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(../images/pp.png) no-repeat center center;
 	background-size: cover;
 }
 
@@ -2299,3 +2300,72 @@ padding: 120px 10px 50px 350px;
 /*---------------------------------------------------
 ------- Media Queries for Split Layout Ends ---------
 ---------------------------------------------------*/
+
+.big-black-square {
+    width: 300px;
+    height: 200px;
+    background-color: #000; /* Black background color */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 20px; /* Padding to center the text */
+	margin-right: 1rem;
+	margin-top: 1rem ;
+	margin-bottom: 1.5rem;
+    font-size: 24px; /* Adjust the font size as needed */
+    font-family: monospace;
+}
+
+
+
+.butt {
+	background-color: #333;
+	color: #fff;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	font-size: 17px;
+  }
+  
+  .butt:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+	background-color: rgb(128, 95, 247);
+  }
+  
+  .butt:active {
+	transform: translateY(0.5em);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+/* this is the typo begin */
+.cooc {
+	
+	background-color: #111827;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10rem;
+}
+
+.cooc {
+	border-radius: 10px;
+	padding: 3rem 6rem;
+	border: 2px solid white;
+}
+
+.loly {
+	font-size: 2rem;
+	color: gold;
+}
+
+.doly {
+	
+	 color: rgb(128, 95, 247);
+}
+
+/* this is the typo end */
+

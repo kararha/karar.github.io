@@ -1,2 +1,2 @@
 # karar
-place to handl sql 
+A personal website on github pages

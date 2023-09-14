@@ -10,7 +10,11 @@
     <link href='css/scoreboard.css' type='text/css' media='screen' rel='stylesheet'>
 </head>
 <body>
-    <h4 class="d"><a href="index.html">Home</a></h4>
+    <div>
+        <p class="butt" id="pool">
+            اضغط 
+          </p>
+        </div>
     <div id='viewport'>
         <div id='screen'>
             <div id='nicknamescreen'>
@@ -60,5 +64,15 @@
 
     <script src='js/scoreboard.js'></script>
     <script src="js/game.js"></script>
+    <script>
+        // Get a reference to the button element
+        const pool = document.getElementById("pool");
+        
+        // Add a click event listener to the button
+        pool.addEventListener("click", function() {
+            // Use the window.location property to navigate to the desired page
+            window.location.href = "index.html";
+        });
+        </script>
 </body>
 </html>

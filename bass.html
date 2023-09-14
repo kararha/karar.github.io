@@ -6,7 +6,13 @@
 	<link rel="website icon" type="png"
     href="images/ko.png" </link>
 	<script type="text/javascript" src="js/phaser.min.js"></script>
-	<h4 class="d"><a href="index.html">Home</a></h4>
+	<center>
+	<div>
+		<p class="butt" id="pool">
+			الصفحه الرئيسية 
+		  </p>
+		</div>
+	</center>
 	<h2>الكاس الكاس مالتنه الكاس 😂</h2>
     <style type="text/css">
         body {
@@ -34,6 +40,33 @@
 					color: rgb(255, 242, 0);
 					cursor: pointer;
 				}
+
+				.butt {
+    display: grid;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background */
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 17px;
+}
+
+.butt:hover {
+    backdrop-filter: blur(10px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(128, 95, 247, 0.8); /* Semi-transparent background color on hover */
+}
+
+.butt:active {
+    transform: translateY(0.5em);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
     </style>
 </head>
 <body>
@@ -278,6 +311,16 @@ function launch(x_traj) {
 }
 
 </script>
+<script>
+	// Get a reference to the button element
+	const pool = document.getElementById("pool");
+	
+	// Add a click event listener to the button
+	pool.addEventListener("click", function() {
+		// Use the window.location property to navigate to the desired page
+		window.location.href = "index.html";
+	});
+	</script>
 
 </body>
 </html>

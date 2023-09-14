@@ -38,3 +38,32 @@
         font-size: 3.2vmin;
     }
 }
+
+
+
+.butt {
+    display: grid;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background */
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 17px;
+}
+
+.butt:hover {
+    backdrop-filter: blur(10px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(128, 95, 247, 0.8); /* Semi-transparent background color on hover */
+}
+
+.butt:active {
+    transform: translateY(0.5em);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
