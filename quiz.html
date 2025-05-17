@@ -1,4 +1,5 @@
 <!doctype html>
+<<<<<<< HEAD
 <html lang="ar" dir="rtl">
 
 <head>
@@ -75,6 +76,64 @@
     </div>
 
     <script src="js/quiz.js"></script>
+=======
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="website icon" type="png"
+      href="images/ko.png" </link>
+    <title>امتحان سريع</title>
+</head>
+
+<body>
+    <div class="start-screen">
+        <button id="start-button">Start</button>
+    </div>
+    <div>
+        <p class="butt" id="pool">
+            الصفحه الرئيسية 
+          </p>
+        </div>
+    <div id="display-container">
+        <div class="header">
+            <div class="number-of-count">
+                <span class="number-of-question">1 of 3 questions</span>
+            </div>
+            <div class="timer-div">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/time-and-date/stopwatch-icon.png"
+                    width="20px" />
+                <span class="time-left">10s</span>
+            </div>
+        </div>
+        <div id="container">
+            <!-- questions and options will be displayed here -->
+        </div>
+        <button id="next-button">Next</button>
+    </div>
+    <div class="score-container hide">
+        <div id="user-score">Demo Score</div>
+        <button id="restart">Restart</button>
+    </div>
+
+    <script src="js/quiz.js"></script>
+
+    <script>
+        // Get a reference to the button element
+        const pool = document.getElementById("pool");
+        
+        // Add a click event listener to the button
+        pool.addEventListener("click", function() {
+            // Use the window.location property to navigate to the desired page
+            window.location.href = "index.html";
+        });
+        </script>
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 </body>
 
 </html>

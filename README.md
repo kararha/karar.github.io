@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Karar's Personal Website
 
 A personal portfolio website hosted on GitHub Pages.
@@ -34,3 +35,7 @@ To run this website locally:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+=======
+# karar
+A personal website on github pages
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4

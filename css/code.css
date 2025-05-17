@@ -5,6 +5,7 @@
 }
 
 body {
+<<<<<<< HEAD
   background: #283618;
   background-image: linear-gradient(135deg, rgba(40, 54, 24, 0.95), rgba(96, 108, 56, 0.8));
   background-attachment: fixed;
@@ -16,12 +17,23 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #fefae0;
+=======
+  background: #002240;
+}
+
+.header-wrap {
+  margin: 120px 0;
+  text-align: center;
+  font-family: sans-serif;
+  color: #ddd;
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 }
 
 .header-wrap h1 {
   margin-bottom: 16px;
   font-weight: 300;
   font-size: 46px;
+<<<<<<< HEAD
   color: #dda15e;
 }
 
@@ -29,6 +41,11 @@ body {
   color: #fefae0;
   opacity: 0.9;
 }
+=======
+}
+
+
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 
 /*ace*/
 .ace_editor {
@@ -38,11 +55,18 @@ body {
 #ide-parent {
   width: 90%;
   height: auto;
+<<<<<<< HEAD
   border-radius: 16px;
   overflow: hidden;
   margin: auto;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(221, 161, 94, 0.2);
+=======
+  border-radius: 1em;
+  overflow: hidden;
+  margin: auto;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 }
 
 #button-wrapper {
@@ -53,6 +77,7 @@ body {
 
 #button-wrapper button {
   width: 25%;
+<<<<<<< HEAD
   border: 1px solid rgba(221, 161, 94, 0.2);
   background: rgba(188, 108, 37, 0.25);
   cursor: pointer;
@@ -68,6 +93,22 @@ body {
 #button-wrapper button:hover {
   background: rgba(188, 108, 37, 0.35);
   transform: translateY(-2px);
+=======
+  border: none;
+  background: #00325E;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #ddd;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 2px;
+  font-size: 13px;
+  outline: none;
+  transition-duration: 300ms;
+}
+
+#button-wrapper button:hover {
+  background: #000E1B;
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 }
 
 #ide-container {
@@ -82,7 +123,27 @@ body {
   height: 100%;
 }
 
+<<<<<<< HEAD
 #html, #css, #js {
+=======
+#html {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#css {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#js {
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
   position: absolute;
   top: 0;
   right: 0;
@@ -93,11 +154,16 @@ body {
 #result {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   background: #fff;
+=======
+  background: #002240;
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
   border: none;
 }
 
 .ace-dracula {
+<<<<<<< HEAD
   background-color: rgba(40, 54, 24, 0.8) !important;
 }
 
@@ -107,10 +173,22 @@ body {
 
 .ace_scrollbar-h, .ace_scrollbar-v {
   scrollbar-color: rgba(221, 161, 94, 0.4) rgba(40, 54, 24, 0.8) !important;
+=======
+  background-color: #162447 !important;
+}
+
+.ace-dracula .ace_gutter {
+  background: #162447 !important;
+}
+
+.ace_scrollbar-h {
+  scrollbar-color: #1f4068 #162447 !important;
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
   scrollbar-width: thin !important;
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .ace_scrollbar-h::-webkit-scrollbar,
 .ace_scrollbar-v::-webkit-scrollbar {
   border: none;
@@ -130,6 +208,46 @@ body {
 }
 
 .ace_scrollbar-h::-webkit-scrollbar-track,
+=======
+.ace_scrollbar-v {
+  scrollbar-color: #1f4068 #162447 !important;
+  scrollbar-width: thin !important;
+  cursor: pointer;
+}
+
+.ace_scrollbar-h::-webkit-scrollbar {
+  border: none;
+  height: 0.6em;
+}
+
+.ace_scrollbar-h::-webkit-scrollbar-thumb {
+  background: #1f4068;
+  border: none;
+}
+
+.ace_scrollbar-h::-webkit-scrollbar-thumb:hover {
+  background: #173458;
+}
+
+.ace_scrollbar-h::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ace_scrollbar-v::-webkit-scrollbar {
+  border: none;
+  width: 0.6em;
+}
+
+.ace_scrollbar-v::-webkit-scrollbar-thumb {
+  background: #1f4068;
+  border: none;
+}
+
+.ace_scrollbar-v::-webkit-scrollbar-thumb:hover {
+  background: #173458;
+}
+
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 .ace_scrollbar-v::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -140,8 +258,13 @@ body {
   margin-top: 120px;
   margin-bottom: 120px;
   text-align: center;
+<<<<<<< HEAD
   color: #fefae0;
   font-family: 'Open Sans', sans-serif;
+=======
+  color: #ddd;
+  font-family: sans-serif;
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
   font-size: 14px;
 }
 
@@ -157,21 +280,37 @@ body {
 }
 
 .description svg path {
+<<<<<<< HEAD
   fill: #dda15e;
 }
 
 .description a {
   color: #dda15e;
+=======
+  fill: #e43f5a;
+}
+
+.description a {
+  color: #e43f5a;
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 }
 
 .footer {
   text-align: center;
+<<<<<<< HEAD
   color: rgba(254, 250, 224, 0.7);
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
   background: rgba(40, 54, 24, 0.9);
   padding: 70px 0;
   border-top: 1px solid rgba(221, 161, 94, 0.2);
+=======
+  color: rgba(221, 221, 221, 0.6);
+  font-family: sans-serif;
+  font-size: 13px;
+  background: #000E1B;
+  padding: 70px 0;
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 }
 
 .inner-wrap {
@@ -192,8 +331,13 @@ body {
 }
 
 .icons-wrap {
+<<<<<<< HEAD
   display: flex;
   align-items: center;
+=======
+	display: flex;
+	align-items: center;
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
 }
 
 /* ------------------------------------ */
@@ -206,6 +350,7 @@ body {
   width: 100%;
   max-width: 140px;
   height: 50px;
+<<<<<<< HEAD
   border-radius: 12px;
   overflow: hidden;
   background-color: rgba(188, 108, 37, 0.25);
@@ -226,11 +371,30 @@ button, button div {
 }
 
 button div span {
+=======
+  border-radius: 0.5em;
+  box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
+  overflow: hidden;
+ }
+ 
+ button div {
+  transform: translateY(0px);
+  width: 100%;
+ }
+ 
+ button,
+ button div {
+  transition: 0.6s cubic-bezier(.16,1,.3,1);
+ }
+ 
+ button div span {
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50px;
   padding: 0.75em 1.125em;
+<<<<<<< HEAD
 }
 
 button div:nth-child(1) {
@@ -668,3 +832,32 @@ button:active {
     grid-template-columns: 1fr;
   }
 }
+=======
+ }
+ 
+ button div:nth-child(1) {
+  background-color: #1e90ff;
+ }
+ 
+ button div:nth-child(2) {
+  background-color: #21dc62;
+ }
+ 
+ button:hover {
+  box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
+ }
+ 
+ button:hover div {
+  transform: translateY(-50px);
+ }
+ 
+ button p {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+ }
+ 
+ button:active {
+  transform: scale(0.95);
+ }
+>>>>>>> d20da9740b078c0ed8ca6696fa1772a01f3b34b4
