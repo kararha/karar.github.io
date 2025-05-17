@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="website icon" type="png" href="images/ko.png">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>امتحان تكنولوجيا المعلومات الشامل</title>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <!-- Start Screen -->
+        <div class="start-screen">
+            <div class="quiz-header">
+                <h1><i class="fa fa-graduation-cap"></i> امتحان تكنولوجيا المعلومات الشامل</h1>
+                <p>اختبر معرفتك في مجالات تكنولوجيا المعلومات المختلفة</p>
+            </div>
+            <div class="quiz-categories">
+                <span class="category-tag"><i class="fa fa-laptop"></i> أساسيات IT</span>
+                <span class="category-tag"><i class="fa fa-network-wired"></i> الشبكات</span>
+                <span class="category-tag"><i class="fa fa-database"></i> قواعد البيانات</span>
+                <span class="category-tag"><i class="fa fa-shield-alt"></i> الأمن السيبراني</span>
+                <span class="category-tag"><i class="fa fa-code"></i> تطوير الويب</span>
+                <span class="category-tag"><i class="fa fa-robot"></i> الذكاء الاصطناعي</span>
+            </div>
+            <button id="start-button">ابدأ الاختبار <i class="fa fa-play"></i></button>
+        </div>
+        
+        <!-- Home Button -->
+        <div class="nav-button">
+            <a href="index.html" class="butt">
+                <i class="fa fa-home"></i> الصفحة الرئيسية 
+            </a>
+        </div>
+        
+        <!-- Question Container -->
+        <div id="display-container" class="hide">
+            <div class="header">
+                <div class="number-of-count">
+                    <span class="number-of-question">1 من 10 أسئلة</span>
+                </div>
+                <div class="timer-div">
+                    <i class="fa fa-clock"></i>
+                    <span class="time-left">10s</span>
+                </div>
+            </div>
+            <div id="container">
+                <!-- questions and options will be displayed here -->
+            </div>
+            <button id="next-button">التالي <i class="fa fa-arrow-left"></i></button>
+        </div>
+        
+        <!-- Score Container -->
+        <div class="score-container hide">
+            <div class="score-content">
+                <div class="score-header">
+                    <i class="fa fa-trophy"></i>
+                    <h2>النتيجة النهائية</h2>
+                </div>
+                <div id="user-score">لقد أجبت بشكل صحيح على 4 من 10 سؤال</div>
+                <div class="score-info">
+                    <p>لقد أكملت اختبار تكنولوجيا المعلومات الشامل!</p>
+                    <p>استمر في تطوير معرفتك في مجالات IT المختلفة.</p>
+                </div>
+                <div class="action-buttons">
+                    <a href="index.html" class="home-button"><i class="fa fa-home"></i> الصفحة الرئيسية</a>
+                    <button id="restart"><i class="fa fa-redo"></i> إعادة الاختبار</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+</body>
+
+</html>

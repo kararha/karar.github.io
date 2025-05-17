@@ -115,3 +115,53 @@ $('.counter').counterUp({
     });
 
 });
+
+// Initialize expandable skill cards
+document.addEventListener('DOMContentLoaded', function() {
+  const expandableBtns = document.querySelectorAll('.expand-btn');
+  
+  expandableBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const card = this.closest('.bento-card');
+      card.classList.toggle('expanded');
+      
+      // Animation for smooth expansion
+      const details = card.querySelector('.skill-details');
+      if (card.classList.contains('expanded')) {
+        details.style.maxHeight = details.scrollHeight + "px";
+      } else {
+        details.style.maxHeight = "0";
+      }
+    });
+  });
+  
+  // Add skill hover effects
+  const skillCards = document.querySelectorAll('.bento-card');
+  
+  skillCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      const icon = this.querySelector('.icon i');
+      if (icon) {
+        icon.classList.add('fa-beat');
+        setTimeout(() => {
+          icon.classList.remove('fa-beat');
+        }, 1000);
+      }
+    });
+  });
+  
+  // Add resource link animations
+  const resourceLinks = document.querySelectorAll('.resource-list li a');
+  
+  resourceLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+      const icon = this.querySelector('i');
+      if (icon) {
+        icon.classList.add('fa-bounce');
+        setTimeout(() => {
+          icon.classList.remove('fa-bounce');
+        }, 1000);
+      }
+    });
+  });
+});

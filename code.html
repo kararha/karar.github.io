@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محرر أكواد مباشر</title>
+  <meta name="description" content="محرر أكواد مباشر للـ HTML و CSS و JavaScript">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Karar Haider">
+  <meta name="keywords" content="Live code editor, online code editor, محرر أكواد, html, css, javascript">
+  <link rel="stylesheet" href="css/code.css">
+  <link rel="website icon" type="png" href="images/ko.png">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="nav-button">
+    <button class="butt" id="navigateButton">
+      <i class="fa fa-home"></i> الصفحة الرئيسية
+    </button>
+  </div>
+
+  <div class="header-wrap">
+    <h1>محرر الأكواد المباشر</h1>
+    <h4>قم بكتابة وتنفيذ HTML و CSS و JavaScript مباشرة</h4>
+  </div>
+  
+  <div class="toolbar">
+    <div class="toolbar-group">
+      <button id="split-view-btn" onclick="toggleSplitLayout()"><i class="fa fa-columns"></i> عرض مقسم</button>
+      <button id="fullscreen-btn" onclick="toggleResultFullscreen()"><i class="fa fa-expand"></i> عرض كامل</button>
+      <button id="download-btn" onclick="downloadCode()"><i class="fa fa-download"></i> تنزيل الملفات</button>
+      <button id="keyboard-shortcuts-btn" onclick="toggleKeyboardShortcuts()"><i class="fa fa-keyboard"></i> اختصارات</button>
+    </div>
+    <div class="toolbar-group">
+      <select id="theme-selector" onchange="changeEditorTheme(this.value)">
+        <option value="cobalt">Cobalt</option>
+        <option value="monokai">Monokai</option>
+        <option value="github">Github</option>
+        <option value="tomorrow_night">Tomorrow Night</option>
+        <option value="dracula">Dracula</option>
+        <option value="eclipse">Eclipse</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="file-manager">
+    <div class="file-manager-header">
+      <h3>الملفات</h3>
+    </div>
+    <div id="files-list" class="files-list">
+      <!-- File icons will be added here by JS -->
+    </div>
+  </div>
+
+  <div id="ide-parent">
+    <div id="button-wrapper">
+      <button onclick="switchPanel(0)"><i class="fa fa-code"></i> HTML</button>
+      <button onclick="switchPanel(1)"><i class="fa fa-paint-brush"></i> CSS</button>
+      <button onclick="switchPanel(2)"><i class="fa fa-js"></i> JavaScript</button>
+      <button onclick="runEdit(3)"><i class="fa fa-play"></i> النتيجة</button>
+    </div>
+    <div id="ide-container">
+      <div class="panel-wrapper">
+        <div id="html">
+&lt;!--بهاي اللغه ينبني الهيكل--&gt;
+
+&lt;div class="c"&gt;
+  &lt;div class="d"&gt;
+    &lt;span&gt;امنحهم عرضاً مميزاً&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="d"&gt;
+    &lt;span&gt;ولم يؤمن بك انهم يُشاهِدونك&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="d"&gt;
+    &lt;span&gt;لكل من خذلك وتركك&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="css">
+/*(css)  تلون وتحرك كل شي في الموضع الذي يناسبك بلغة */
+
+.c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.d {
+  margin: 2%;
+  background: #DBBDBD;
+  width: 70px;
+  height: 100px;
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  transition: .2s all;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+  padding-top: 30px;
+}
+
+.d > span {
+  display: block;
+  margin: auto;
+  max-width: 40px;
+}
+
+.c:hover .d {
+  filter: blur(3px);
+  opacity: .5;
+  transform: scale(.98);
+  box-shadow: none;
+}
+
+.c:hover .d:hover {
+  transform: scale(1);
+  filter: blur(0px);
+  opacity: 1;
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
+  background: #A82C2C;
+  color: white;
+}
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="js">
+//  هذه اللغة هي ديناميكية الصفحه
+
+var c = document.querySelector(".c");
+var bool = false;
+
+c.addEventListener('click', function() {
+	if (!bool) {
+		c.style.background = "black";
+		bool = true;
+	} else {
+		c.style.background = "lightblue";
+		bool = false;
+	}
+});
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <iframe id="result"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Keyboard shortcuts panel -->
+  <div id="keyboard-shortcuts" class="keyboard-shortcuts">
+    <div class="shortcuts-header">
+      <h3>اختصارات لوحة المفاتيح</h3>
+      <button onclick="toggleKeyboardShortcuts()">×</button>
+    </div>
+    <div class="shortcuts-content">
+      <div class="shortcut-group">
+        <h4>التنقل</h4>
+        <div class="shortcut"><span>Ctrl + 1</span> الانتقال إلى HTML</div>
+        <div class="shortcut"><span>Ctrl + 2</span> الانتقال إلى CSS</div>
+        <div class="shortcut"><span>Ctrl + 3</span> الانتقال إلى JavaScript</div>
+        <div class="shortcut"><span>Ctrl + 4</span> الانتقال إلى النتيجة</div>
+      </div>
+      <div class="shortcut-group">
+        <h4>عمليات</h4>
+        <div class="shortcut"><span>Ctrl + S</span> حفظ وتنفيذ الكود</div>
+        <div class="shortcut"><span>Ctrl + Alt + S</span> تبديل العرض المقسم</div>
+        <div class="shortcut"><span>F11</span> عرض كامل للنتيجة</div>
+        <div class="shortcut"><span>Ctrl + Alt + K</span> عرض اختصارات لوحة المفاتيح</div>
+      </div>
+      <div class="shortcut-group">
+        <h4>اختصارات المحرر</h4>
+        <div class="shortcut"><span>Ctrl + Z</span> تراجع</div>
+        <div class="shortcut"><span>Ctrl + Y</span> إعادة</div>
+        <div class="shortcut"><span>Ctrl + F</span> بحث</div>
+        <div class="shortcut"><span>Ctrl + H</span> استبدال</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="editor-features">
+    <div class="feature-item">
+      <i class="fa fa-bolt"></i>
+      <h3>تنفيذ مباشر</h3>
+      <p>شاهد نتائج كتابة الأكواد بشكل مباشر</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa fa-code"></i>
+      <h3>دعم كامل للأكواد</h3>
+      <p>HTML و CSS و JavaScript بميزات كاملة</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa fa-eye"></i>
+      <h3>واجهة سهلة</h3>
+      <p>واجهة بسيطة وسهلة الاستخدام</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa fa-columns"></i>
+      <h3>عرض مقسم</h3>
+      <p>اعرض الكود والنتيجة جنباً إلى جنب</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="inner-wrap">
+      <p>&#169; <span id="year"></span> جميع الحقوق محفوظة | كرار حيدر</p>
+    </div>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ext-language_tools.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Get a reference to the button element
+    const navigateButton = document.getElementById("navigateButton");
+    
+    // Add a click event listener to the button
+    navigateButton.addEventListener("click", function() {
+        // Use the window.location property to navigate to the desired page
+        window.location.href = "index.html";
+    });
+  </script>
+</body>
+
+</html>

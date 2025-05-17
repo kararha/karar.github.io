@@ -1,0 +1,406 @@
+/* Hover Effects CSS - Add stylish hover effects for the entire site */
+
+/* Base hover transitions */
+.hover-transition {
+    transition: all 0.3s ease;
+}
+
+/* Lift effect on hover */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Scale effect on hover */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Glow effect on hover */
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
+}
+
+/* Text glow effect on hover */
+.hover-text-glow {
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.hover-text-glow:hover {
+    color: #dda15e;
+    text-shadow: 0 0 10px rgba(221, 161, 94, 0.6);
+}
+
+/* Background change on hover */
+.hover-bg {
+    transition: background-color 0.3s ease;
+}
+
+.hover-bg:hover {
+    background-color: rgba(221, 161, 94, 0.2);
+}
+
+/* Border glow on hover */
+.hover-border {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-border:hover {
+    border-color: rgba(221, 161, 94, 0.8);
+    box-shadow: 0 0 10px rgba(221, 161, 94, 0.3);
+}
+
+/* Rotate effect on hover */
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+/* Tilt effect on hover */
+.hover-tilt {
+    transition: transform 0.3s ease;
+}
+
+.hover-tilt:hover {
+    transform: perspective(500px) rotateX(5deg);
+}
+
+/* Button-specific hover effects */
+.button-hover-slide {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.button-hover-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.button-hover-slide:hover::before {
+    left: 100%;
+}
+
+/* Border animation on hover */
+.hover-border-pulse {
+    position: relative;
+}
+
+.hover-border-pulse::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 1px solid #dda15e;
+    border-radius: inherit;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.hover-border-pulse:hover::after {
+    opacity: 1;
+    animation: borderPulse 1.5s infinite;
+}
+
+@keyframes borderPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}
+
+/* Text underline effect on hover */
+.hover-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #dda15e;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Color change on hover */
+.hover-color {
+    transition: color 0.3s ease;
+}
+
+.hover-color:hover {
+    color: #dda15e;
+}
+
+/* Shadow effect on hover */
+.hover-shadow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Zoom effect for images on hover */
+.hover-zoom {
+    overflow: hidden;
+}
+
+.hover-zoom img {
+    transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.1);
+}
+
+/* Button background fill effect */
+.hover-fill {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hover-fill::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(221, 161, 94, 0.2);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.hover-fill:hover::before {
+    height: 100%;
+}
+
+/* Button squeeze effect */
+.hover-squeeze {
+    transition: all 0.3s ease;
+}
+
+.hover-squeeze:hover {
+    transform: scaleX(0.95) scaleY(0.95);
+}
+
+/* Icon bounce effect */
+.hover-icon-bounce i {
+    transition: transform 0.3s ease;
+}
+
+.hover-icon-bounce:hover i {
+    animation: iconBounce 0.5s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Icon spin effect */
+.hover-icon-spin i {
+    transition: transform 0.3s ease;
+}
+
+.hover-icon-spin:hover i {
+    transform: rotate(180deg);
+}
+
+/* Letter spacing effect */
+.hover-letter-spacing {
+    transition: letter-spacing 0.3s ease;
+}
+
+.hover-letter-spacing:hover {
+    letter-spacing: 1px;
+}
+
+/* Gradient border effect */
+.hover-gradient-border {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.3s ease;
+}
+
+.hover-gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -2px;
+    border-radius: inherit;
+    background: linear-gradient(to right, #dda15e, #bc6c25);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hover-gradient-border:hover::before {
+    opacity: 1;
+}
+
+/* Ripple effect for buttons */
+.hover-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-ripple::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: none;
+    pointer-events: none;
+}
+
+.hover-ripple:active::after {
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(6);
+        opacity: 0;
+    }
+}
+
+/* Shake effect on hover */
+.hover-shake:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* 3D button effect */
+.hover-3d {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.hover-3d:hover {
+    transform: translateY(-5px) rotateX(10deg);
+}
+
+/* Floating label effect for form inputs */
+.floating-label {
+    position: relative;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    color: rgba(254, 250, 224, 0.7);
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+    top: 0px;
+    left: 10px;
+    font-size: 12px;
+    color: #dda15e;
+    background: rgba(40, 54, 24, 0.8);
+    padding: 0 5px;
+}
+
+/* Directional hover effects */
+.hover-right {
+    transition: transform 0.3s ease;
+}
+
+.hover-right:hover {
+    transform: translateX(5px);
+}
+
+.hover-left {
+    transition: transform 0.3s ease;
+}
+
+.hover-left:hover {
+    transform: translateX(-5px);
+}
+
+.hover-up {
+    transition: transform 0.3s ease;
+}
+
+.hover-up:hover {
+    transform: translateY(-5px);
+}
+
+.hover-down {
+    transition: transform 0.3s ease;
+}
+
+.hover-down:hover {
+    transform: translateY(5px);
+}

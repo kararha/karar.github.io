@@ -1,0 +1,561 @@
+/* Custom Modal Styling with Glassmorphism */
+
+.glass-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(40, 54, 24, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.glass-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.glass-modal {
+    background: rgba(40, 54, 24, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(221, 161, 94, 0.3);
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.glass-modal-overlay.active .glass-modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.glass-modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(221, 161, 94, 0.1), transparent);
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+.glass-modal-header {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(221, 161, 94, 0.2);
+}
+
+.glass-modal-title {
+    color: #dda15e;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.glass-modal-subtitle {
+    color: #fefae0;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.glass-modal-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(188, 108, 37, 0.3);
+    border: 1px solid rgba(221, 161, 94, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.glass-modal-close:hover {
+    background: rgba(188, 108, 37, 0.5);
+    transform: rotate(90deg);
+}
+
+.glass-modal-close i {
+    color: #fefae0;
+    font-size: 18px;
+}
+
+.glass-modal-body {
+    margin-bottom: 20px;
+    color: #fefae0;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.glass-modal-body p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.glass-modal-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.glass-modal-scrollbar::-webkit-scrollbar-track {
+    background: rgba(96, 108, 56, 0.2);
+    border-radius: 3px;
+}
+
+.glass-modal-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(221, 161, 94, 0.4);
+    border-radius: 3px;
+}
+
+.glass-modal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(221, 161, 94, 0.6);
+}
+
+.glass-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    border-top: 1px solid rgba(221, 161, 94, 0.2);
+}
+
+.glass-modal-btn {
+    background: rgba(188, 108, 37, 0.25);
+    color: #fefae0;
+    border: 1px solid rgba(221, 161, 94, 0.3);
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.glass-modal-btn:hover {
+    background: rgba(188, 108, 37, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.glass-modal-btn-alt {
+    background: rgba(96, 108, 56, 0.25);
+    border: 1px solid rgba(96, 108, 56, 0.3);
+}
+
+.glass-modal-btn-alt:hover {
+    background: rgba(96, 108, 56, 0.4);
+}
+
+/* Animation for modal open */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.glass-modal.animate-in {
+    animation: modalFadeIn 0.4s forwards;
+}
+
+/* Animation for modal close */
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.glass-modal.animate-out {
+    animation: modalFadeOut 0.4s forwards;
+}
+
+/* Size variants */
+.glass-modal.sm {
+    max-width: 400px;
+}
+
+.glass-modal.lg {
+    max-width: 700px;
+}
+
+.glass-modal.xl {
+    max-width: 900px;
+}
+
+.glass-modal.fullscreen {
+    max-width: 95%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.glass-modal.fullscreen .glass-modal-body {
+    flex: 1;
+    max-height: unset;
+}
+
+/* Position variants */
+.glass-modal-overlay.top .glass-modal {
+    margin-top: 5vh;
+    align-self: flex-start;
+}
+
+.glass-modal-overlay.bottom .glass-modal {
+    margin-bottom: 5vh;
+    align-self: flex-end;
+}
+
+/* Media queries for responsive modals */
+@media screen and (max-width: 768px) {
+    .glass-modal {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .glass-modal-title {
+        font-size: 20px;
+    }
+    
+    .glass-modal-subtitle {
+        font-size: 14px;
+    }
+    
+    .glass-modal-close {
+        top: -10px;
+        right: -10px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .glass-modal.lg, .glass-modal.xl {
+        max-width: 95%;
+    }
+}
+
+/* Glass Modal Form Styling */
+.glass-modal-form .form-group {
+    margin-bottom: 20px;
+}
+
+.glass-modal-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #dda15e;
+    font-weight: 500;
+}
+
+.glass-modal-form input,
+.glass-modal-form textarea,
+.glass-modal-form select {
+    width: 100%;
+    background: rgba(40, 54, 24, 0.5);
+    border: 1px solid rgba(221, 161, 94, 0.3);
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: #fefae0;
+    transition: all 0.3s ease;
+}
+
+.glass-modal-form input:focus,
+.glass-modal-form textarea:focus,
+.glass-modal-form select:focus {
+    outline: none;
+    border-color: rgba(221, 161, 94, 0.7);
+    box-shadow: 0 0 10px rgba(221, 161, 94, 0.3);
+}
+
+.glass-modal-form input::placeholder,
+.glass-modal-form textarea::placeholder {
+    color: rgba(254, 250, 224, 0.5);
+}
+
+/* Alert types */
+.glass-modal.success .glass-modal-header {
+    border-bottom-color: rgba(104, 159, 56, 0.3);
+}
+
+.glass-modal.success .glass-modal-title {
+    color: #8bc34a;
+}
+
+.glass-modal.warning .glass-modal-header {
+    border-bottom-color: rgba(255, 193, 7, 0.3);
+}
+
+.glass-modal.warning .glass-modal-title {
+    color: #ffc107;
+}
+
+.glass-modal.error .glass-modal-header {
+    border-bottom-color: rgba(244, 67, 54, 0.3);
+}
+
+.glass-modal.error .glass-modal-title {
+    color: #f44336;
+}
+
+.glass-modal.info .glass-modal-header {
+    border-bottom-color: rgba(33, 150, 243, 0.3);
+}
+
+.glass-modal.info .glass-modal-title {
+    color: #2196f3;
+}
+
+/* Loading state */
+.glass-modal-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 150px;
+}
+
+.glass-modal-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(221, 161, 94, 0.3);
+    border-radius: 50%;
+    border-top-color: #dda15e;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+.glass-modal-loading-text {
+    color: #fefae0;
+    font-size: 16px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modal variations */
+.glass-modal-overlay.center .glass-modal {
+    margin: 0;
+}
+
+.glass-modal-overlay.top {
+    align-items: flex-start;
+}
+
+.glass-modal-overlay.top .glass-modal {
+    margin-top: 100px;
+}
+
+/* Image Gallery in Modal */
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* Form inside modal */
+.modal-form-group {
+    margin-bottom: 20px;
+}
+
+.modal-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #dda15e;
+    font-weight: 500;
+}
+
+.modal-form-group input,
+.modal-form-group textarea,
+.modal-form-group select {
+    width: 100%;
+    background: rgba(40, 54, 24, 0.5);
+    border: 1px solid rgba(221, 161, 94, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    color: #fefae0;
+    font-size: 15px;
+}
+
+.modal-form-group input:focus,
+.modal-form-group textarea:focus,
+.modal-form-group select:focus {
+    outline: none;
+    border-color: #dda15e;
+    box-shadow: 0 0 0 2px rgba(221, 161, 94, 0.2);
+}
+
+/* Modal sizes */
+.glass-modal.sm {
+    max-width: 400px;
+}
+
+.glass-modal.lg {
+    max-width: 700px;
+}
+
+.glass-modal.xl {
+    max-width: 900px;
+}
+
+/* Alert styles */
+.glass-modal.alert-success .glass-modal-header {
+    border-bottom-color: rgba(76, 175, 80, 0.3);
+}
+
+.glass-modal.alert-success .glass-modal-title {
+    color: #4caf50;
+}
+
+.glass-modal.alert-error .glass-modal-header {
+    border-bottom-color: rgba(244, 67, 54, 0.3);
+}
+
+.glass-modal.alert-error .glass-modal-title {
+    color: #f44336;
+}
+
+/* Loading state */
+.glass-modal-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(221, 161, 94, 0.3);
+    border-radius: 50%;
+    border-top-color: #dda15e;
+    animation: spin 1s infinite linear;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    color: #fefae0;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .glass-modal {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .glass-modal-header {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .glass-modal-title {
+        font-size: 20px;
+    }
+    
+    .glass-modal-close {
+        top: -10px;
+        right: -10px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .glass-modal-close i {
+        font-size: 14px;
+    }
+    
+    .glass-modal-body {
+        max-height: 50vh;
+    }
+}
+
+/* RTL Support */
+html[dir="rtl"] .glass-modal-close {
+    right: auto;
+    left: -15px;
+}
+
+html[dir="rtl"] .glass-modal-footer {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .glass-modal-btn {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+html[dir="rtl"] .glass-modal-body {
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+@media (max-width: 576px) {
+    html[dir="rtl"] .glass-modal-close {
+        left: -10px;
+    }
+}

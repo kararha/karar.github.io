@@ -1,0 +1,442 @@
+/* Animations CSS File - Add reusable animations for the entire site */
+
+/* Floating animation - creates a gentle floating effect */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation - creates a subtle pulsing effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Bounce animation - creates a bouncing effect */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Rotate animation - creates a rotating effect */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 10s linear infinite;
+}
+
+.rotate-slow {
+    animation: rotate 20s linear infinite;
+}
+
+.rotate-fast {
+    animation: rotate 5s linear infinite;
+}
+
+/* Fade in animation - fades in elements */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+.fade-in-slow {
+    animation: fadeIn 2s forwards;
+}
+
+.fade-in-fast {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Slide in animations for elements */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 1s forwards;
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-up {
+    animation: slideInUp 1s forwards;
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-down {
+    animation: slideInDown 1s forwards;
+}
+
+/* Shimmer effect for highlights */
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, 
+        rgba(221, 161, 94, 0), 
+        rgba(221, 161, 94, 0.2), 
+        rgba(221, 161, 94, 0)
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+}
+
+/* Typing effect for text */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end) forwards;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-5px, 5px);
+    }
+    40% {
+        transform: translate(-5px, -5px);
+    }
+    60% {
+        transform: translate(5px, 5px);
+    }
+    80% {
+        transform: translate(5px, -5px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.glitch {
+    animation: glitch 0.5s infinite;
+    animation-play-state: paused;
+}
+
+.glitch:hover {
+    animation-play-state: running;
+}
+
+/* Glow effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(221, 161, 94, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(221, 161, 94, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(221, 161, 94, 0.5);
+    }
+}
+
+.glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Text glow effect */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(221, 161, 94, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(221, 161, 94, 0.8), 0 0 30px rgba(221, 161, 94, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(221, 161, 94, 0.5);
+    }
+}
+
+.text-glow {
+    animation: textGlow 2s ease-in-out infinite;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.heartbeat {
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation-play-state: paused;
+}
+
+.shake:hover, .shake:focus {
+    animation: shake 0.5s ease-in-out;
+    animation-play-state: running;
+}
+
+/* Delay classes */
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-1000 {
+    animation-delay: 1s;
+}
+
+.delay-1500 {
+    animation-delay: 1.5s;
+}
+
+.delay-2000 {
+    animation-delay: 2s;
+}
+
+/* Animation for buttons */
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button-pulse {
+    animation: buttonPulse 2s infinite;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(221, 161, 94, 0.3);
+    border-radius: 50%;
+    border-top-color: #dda15e;
+    animation: spin 1s linear infinite;
+}
+
+/* Progress bar animation */
+@keyframes progressBar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.progress-bar {
+    height: 4px;
+    background-color: #dda15e;
+    width: 0%;
+    animation: progressBar 3s forwards;
+}
+
+/* Confetti animation for celebrations */
+@keyframes confetti {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    background-color: #dda15e;
+    position: absolute;
+    top: -10px;
+    animation: confetti 4s forwards ease-out;
+}
+
+/* Appear animation for elements */
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.appear {
+    opacity: 0;
+    animation: appear 0.5s forwards;
+}
+
+/* Disappear animation for elements */
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.disappear {
+    animation: disappear 0.5s forwards;
+}
